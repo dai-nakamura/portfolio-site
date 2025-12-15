@@ -1,0 +1,27 @@
+.navbar--cafe {
+  background: rgba(68, 46, 31, 0.9);
+  color: #f6f0e9;
+  border-bottom: 2px solid #a67b5b;
+  backdrop-filter: blur(4px);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar--cafe .nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar--cafe a {
+  color: #f6f0e9;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar--cafe .logo {
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.4rem;
+}

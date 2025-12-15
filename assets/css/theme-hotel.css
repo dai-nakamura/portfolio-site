@@ -1,0 +1,42 @@
+/* ===============================
+   theme-hotel.css（Hotel）
+================================= */
+body[data-page="hotel"] {
+  background-color: #f5f9fc;
+  color: #1a2a3a;
+}
+
+.navbar--hotel {
+  background: rgba(25, 40, 60, 0.9);
+  color: #e8f0f8;
+  border-bottom: 2px solid #a4b8cc;
+}
+
+.navbar--hotel a {
+  color: #e8f0f8;
+}
+
+.navbar--hotel a:hover {
+  color: #bcd9ff;
+}
+
+.hero {
+  height: 60vh;
+  background: url("assets/img/hero-hotel.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 3rem 4rem;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 5vw, 60px);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}

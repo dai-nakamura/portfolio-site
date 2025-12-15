@@ -1,0 +1,60 @@
+/* ===============================
+   layout.css（共通レイアウト）
+================================= */
+
+/* ヘッダー・ナビバー */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3%;
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* 共通セクション見出し */
+section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: currentColor;
+  margin: 0.5rem auto 0;
+}

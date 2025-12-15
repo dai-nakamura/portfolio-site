@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* 作品セクション */
+.works {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.works-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.work-card {
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 1rem;
+  width: 280px;
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+.work-card:hover {
+  transform: translateY(-8px);
+}
+
+.work-card img {
+  width: 100%;
+  border-radius: 0.8rem;
+}

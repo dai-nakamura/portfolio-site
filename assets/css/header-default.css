@@ -1,0 +1,15 @@
+.navbar--default {
+  background: rgba(255,255,255,0.85);
+  color: #222;
+  border-bottom: 1px solid #ddd;
+  backdrop-filter: blur(6px);
+}
+
+.navbar--default a {
+  color: #222;
+}
+
+.navbar--default .logo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}

@@ -1,0 +1,3 @@
+パブリックキー　-oo8mfma9zw044C_J
+サービスID service_8fhuz1f
+テンプレートID template_4ksdv1c

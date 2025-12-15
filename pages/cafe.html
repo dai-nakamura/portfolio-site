@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe Karui</title>
+
+
+  <!-- CSSの読み込み順：ベース → レイアウト → テーマ → ページ固有 -->
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/theme-cafe.css">
+</head>
+<body data-page="cafe">
+  <!-- JSが中身を入れる前提＋クラスを追加 -->
+  <header id="site-header" class="header"></header>
+
+  <main class="content">
+    <!-- Heroセクション -->
+    <section class="first-view">
+      <h2>Cafe Karui / Portfolio</h2>
+      <p>Simple. Beautiful. Crafted with care.</p>
+    </section>
+
+    <!-- MENUセクション -->
+    <section id="menu" class="menu-section">
+      <h2>MENU</h2>
+      <div class="menu-container"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Cafe Karui</p>
+  </footer>
+
+  <!-- JS -->
+  <script type="module" src="assets/js/main.js"></script>
+  <script type="module" src="../js/components/menu.js"></script>
+    <script type="module" src="../js/header.js"></script>
+</body>
+</html>

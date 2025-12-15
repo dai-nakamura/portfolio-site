@@ -1,0 +1,342 @@
+/* 全体 */
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  color: #a9b1aee8;
+  transition: background 0.8s ease, color 0.5s ease;
+}
+
+/* =========================
+   🌙 ボタンとナビ位置の修正
+========================= */
+
+/* デスクトップ時 */
+#toggle-mode {
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  padding: 0.5rem 0.9rem;
+}
+
+#toggle-mode:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* ナビゲーション */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.171);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.first-view {
+  height: calc(100vh - 110px);
+  background-image: url(../image/cafe-main.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+/* ヒーロー */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 4rem;
+}
+
+/* 作品セクション */
+.works {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.works-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.work-card {
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 1rem;
+  width: 280px;
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+.work-card:hover {
+  transform: translateY(-8px);
+}
+
+.work-card img {
+  width: 100%;
+  border-radius: 0.8rem;
+}
+
+/* フォーム */
+.contact {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+  margin: auto;
+}
+
+input,
+textarea,
+button {
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem;
+  font-size: 1rem;
+}
+
+textarea {
+  height: 120px;
+}
+
+button {
+  background: #333;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #555;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+/* =========================
+   🍔 ハンバーガーメニュー
+========================= */
+
+.hamburger {
+  display: none;
+  /* PCでは非表示 */
+  cursor: pointer;
+  width: 28px;
+  height: 22px;
+  position: relative;
+  z-index: 1100;
+}
+
+.hamburger span {
+  background: #05bd7f;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  transition: all 0.4s ease;
+  border-radius: 2px;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 9px;
+}
+
+.hamburger span:nth-child(3) {
+  bottom: 0;
+}
+
+/* クロス時のアニメーション */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 9px;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: 9px;
+}
+
+/* =========================
+   レスポンシブ対応
+========================= */
+
+/* タブレット以下（横幅768px以下） */
+@media (max-width: 768px) {
+
+  header {
+    position: relative;
+  }
+
+  /* ナビゲーションバー */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 0 0 12px 12px;
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+  }
+
+  /* 🌙 ボタンは右上に固定 */
+  #toggle-mode {
+    position: fixed;
+    top: 0.8rem;
+    right: 0.8rem;
+    z-index: 1000;
+    padding: 0.5rem 0.9rem;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  /* ロゴとリンクを下にずらす */
+  .logo {
+    margin-top: 2.5rem;
+  }
+
+  /* WORKSセクション */
+  .works-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .work-card {
+    width: 90%;
+  }
+
+  /* フォーム */
+  form {
+    width: 90%;
+  }
+
+  /* テキストサイズ調整 */
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* スマホ（横幅480px以下） */
+@media (max-width: 480px) {
+  header {
+    position: relative;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .logo {
+    margin-top: 2.5rem;
+    /* ロゴを少し下げてボタンと離す */
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  #toggle-mode {
+    position: fixed;
+    top: 0.8rem;
+    right: 0.8rem;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}

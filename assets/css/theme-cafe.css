@@ -1,0 +1,520 @@
+:root {
+  --color-bg-main: #f9f6f2;
+  --color-text-main: #3a2f23;
+  --color-accent: #a67b5b;
+  --color-accent-soft: #f6f0e9;
+  --color-card-bg: #ffffff;
+
+  --radius-card: 16px;
+  --radius-button: 18px;
+
+  --shadow-soft: 0 2px 10px rgba(0,0,0,0.08);
+  --shadow-hover: 0 6px 18px rgba(0,0,0,0.15);
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+  font-family: "Noto Sans JP", sans-serif;
+  transition: background 0.8s ease, color 0.5s ease;
+}
+
+/* =========================
+   🌙 ボタンとナビ位置の修正
+========================= */
+
+/* デスクトップ時 */
+#toggle-mode {
+  border: none;
+  border-radius: var(--radius-button);
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.9rem;
+  transition: background 0.3s ease;
+}
+#toggle-mode:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* ナビゲーション */
+.header {
+  position: fixed;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.171);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.navbar {
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  padding: 0.25rem 0.5rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.content {
+  color: #3e3e3e;
+}
+
+/* ===============================
+   theme-cafe.css（Cafe）
+================================= */
+body[data-page="cafe"] {
+  background-color: #f9f6f2;
+  color: #3a2f23;
+}
+
+.navbar--cafe {
+  background: rgba(68, 46, 31, 0.9);
+  border-bottom: 1px solid rgba(166, 123, 91, 0.4);
+}
+
+.navbar--cafe a {
+  color: #f6f0e9;
+}
+
+.navbar--cafe a:hover {
+  color: #ffdfb3;
+}
+
+.first-view {
+  margin-top: 80px; /* header高さぶん */
+  height: calc(100vh - 80px);
+  background: url("../assets/image/cafe-main.png") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0 var(--space-lg) var(--space-lg);
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+}
+
+.first-view h2 {
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(28px, 4vw, 52px);
+  margin-bottom: 0.3em;
+}
+
+.first-view p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 480px;
+  opacity: 0.9;
+}
+
+
+
+.first-view h2 {
+  font-size: clamp(28px, 4vw, 52px);
+  margin-bottom: 0.3em;
+}
+
+.first-view p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ヒーロー */
+.section-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 4rem;
+}
+
+/* ===============================
+   MENUセクション
+================================ */
+#menu {
+  padding: 80px 5%;
+  background: #f7f3ef;
+}
+.meenu-inner{
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+#menu h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #3a2f23;
+  letter-spacing: 0.12em;
+}
+.menu-card h3 {
+  color: #4a3326;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.menu-container{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: clamp(1.2rem, 3vw, 2rem);
+  justify-content: center; /* ←列全体を中央に寄せる */
+}
+/* Individual Menu Cards */
+.menu-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Image part */
+.menu-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+    display: block;
+}
+
+/* Text part */
+.menu-info {
+ padding: 1.2rem 1.4rem 1.4rem;
+}
+
+.menu-info h3 {
+  line-break: strict;
+  word-break: keep-all;
+  font-size: 1.1rem;
+   margin-bottom: 0.45rem;
+  color: #3a2f23;
+}
+
+.menu-info .desc {
+  font-size: 0.92rem;
+  color: #6b5f55;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+.menu-info .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.menu-info .price {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+
+.menu-info .tag {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: #f3e3d4;
+  color: #8b5b32;
+}
+
+/* フォーム */
+.contact {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+  margin: auto;
+}
+
+input,
+textarea,
+button {
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem;
+  font-size: 1rem;
+}
+
+textarea {
+  height: 120px;
+}
+
+button {
+  color: #a67b5e3c;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #555;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+/* =========================
+   🍔 ハンバーガーメニュー
+========================= */
+
+.hamburger {
+  display: none;
+  /* PCでは非表示 */
+  cursor: pointer;
+  width: 28px;
+  height: 22px;
+  position: relative;
+  z-index: 1100;
+}
+
+.hamburger span {
+  background: #05bd7f;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  transition: all 0.4s ease;
+  border-radius: 2px;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 9px;
+}
+
+.hamburger span:nth-child(3) {
+  bottom: 0;
+}
+
+/* クロス時のアニメーション */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 9px;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: 9px;
+}
+
+/* =========================
+   レスポンシブ対応
+========================= */
+
+/* タブレット以下（横幅768px以下） */
+@media (max-width: 768px) {
+
+  .header {
+    position: relative;
+  }
+
+  /* ナビゲーションバー */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 0 0 12px 12px;
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+  }
+
+  /* 🌙 ボタンは右上に固定 */
+  #toggle-mode {
+    position: fixed;
+    top: 0.8rem;
+    right: 0.8rem;
+    z-index: 1000;
+    padding: 0.5rem 0.9rem;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  /* ================================
+   Hero Section
+================================ */
+  .first-view {
+    margin-top: 100px;
+    /* ← header高さぶん避ける */
+    height: calc(100vh - 100px);
+    background: url("../images/hero-cafe.jpg") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    border-radius: 12px;
+    padding: 0 3rem 5rem;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .first-view h2 {
+    font-size: clamp(24px, 4vw, 52px);
+    margin-bottom: 0.3em;
+  }
+
+  .first-view p {
+    font-size: 8px;
+    line-height: 1.6;
+  }
+
+  /* ロゴとリンクを下にずらす */
+  .logo {
+    margin-top: 2.5rem;
+  }
+
+  /* WORKSセクション */
+  .works-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .work-card {
+    width: 90%;
+  }
+
+  /* フォーム */
+  form {
+    width: 90%;
+  }
+
+  /* テキストサイズ調整 */
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* スマホ（横幅480px以下） */
+@media (max-width: 480px) {
+  header {
+    position: relative;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .logo {
+    margin-top: 2.5rem;
+    /* ロゴを少し下げてボタンと離す */
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  #toggle-mode {
+    position: fixed;
+    top: 0.8rem;
+    right: 0.8rem;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}

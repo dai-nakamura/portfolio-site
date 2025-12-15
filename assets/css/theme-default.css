@@ -1,0 +1,37 @@
+/* ===============================
+   theme-default.css（Portfolio）
+================================= */
+body[data-page="default"] {
+  background: linear-gradient(to bottom, #f7fafc, #ffffff);
+  color: #333;
+}
+
+.navbar--default {
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar--default a:hover {
+  color: #0066cc;
+}
+
+.hero {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+}
+
+.hero h2 {
+  font-size: clamp(32px, 5vw, 60px);
+  color: #222;
+}
+
+.hero p {
+  color: #555;
+  font-size: 1.2rem;
+}

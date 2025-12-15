@@ -1,0 +1,8 @@
+{
+  "logo": "Cafe Karui",
+  "links": [
+    { "label": "HOME", "href": "/pages/index.html" },
+    { "label": "MENU", "href": "#menu" },
+    { "label": "RESERVE", "href": "#booking" }
+  ]
+}

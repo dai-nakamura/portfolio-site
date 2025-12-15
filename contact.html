@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial=1.0">
+  <title>お問い合わせページ</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(to bottom right, #f0fff0, #f9f9f9);
+      padding: 20px;
+      text-align: center;
+    }
+
+    form {
+      background: #fff;
+      max-width: center;
+      margin: auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      text-align: left;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      background: #008000;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: backgrond 0.3s ease;
+    }
+
+    button:hover {
+      background: #006400;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>お問い合わせ</h1>
+  <p>ご質問やご要望がありましたら、こちらからお送りください。</p>
+
+  <form action="" method="post">
+    <label for="name">お名前:</label>
+    <input type="text" id="name" name="name" placeholder="山田　太郎" required>
+
+    <label for="message">メッセージ</label>
+    <textarea name="message" rows="5" placeholder="お問い合わせ内容を入力してください。" required></textarea>
+
+    <button type="submit">送信</button>
+  </form>
+</body>
+
+</html>
