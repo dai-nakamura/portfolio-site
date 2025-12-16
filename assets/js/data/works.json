@@ -2,20 +2,20 @@
   {
     "title": "架空カフェサイト",
     "description": "シンプルで温かみのあるデザインのカフェLP。",
-    "image": "./images/sample1.jpg",
+    "image": "assets/image/xxx.jpg",
     "url": "/pages/cafe.html"
     
   },
   {
     "title": "ホテル予約サイト",
     "description": "日付選択UIとフェード演出を搭載したデモページ。",
-    "image": "./images/sample2.jpg",
+    "image": "assets/image/xxx.jpg",
     "url" : "/pages/hotel.html"
   },
   {
     "title": "ポートフォリオサイト（このページ）",
     "description": "昼夜切替と時間帯グラデーション背景を実装したページ。",
-    "image": "./images/sample3.jpg",
+    "image": "assets/image/xxx.jpg",
     "url":"/pages/index.html"
   }
 ]

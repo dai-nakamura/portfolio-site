@@ -1,5 +1,5 @@
 import { initGradient, initThemeToggle } from "./animation.js";
-import "./components/works.js";
+import "./works.js";
 const header = document.querySelector("#site-header");
 header.innerHTML = `
   <div class="navbar navbar--cafe">
